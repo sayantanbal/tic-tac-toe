@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui;
+  background: radial-gradient(circle at 20% 20%, #2ad1ff1c, transparent 55%),
+    radial-gradient(circle at 80% 10%, #ffba3b26, transparent 50%),
+    radial-gradient(circle at 80% 80%, #9b7bff26, transparent 55%),
+    linear-gradient(180deg, #0b0f1a 0%, #111827 40%, #0b1020 100%);
+  color: #e2e8f0;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.45);
+}
+
+.grid-glow::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 60%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.win-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.win-line line {
+  stroke: rgba(56, 189, 248, 0.9);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: draw-line 0.6s ease forwards;
+}
+
+.win-line-x line {
+  stroke: rgba(56, 189, 248, 0.95);
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8));
+}
+
+.win-line-o line {
+  stroke: rgba(251, 191, 36, 0.95);
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.8));
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
