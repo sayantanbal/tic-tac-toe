@@ -197,51 +197,6 @@ function App() {
                 </div>
               </div>
             </section>
-
-            <section className="glass-panel rounded-[28px] p-6">
-              <h3 className="text-xl font-semibold text-white">Submission</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Add your live demo and repository links when ready.
-              </p>
-              <div className="mt-4 grid gap-3 text-sm text-slate-200">
-                <a
-                  href={LIVE_URL || '#'}
-                  className={`flex items-center justify-between rounded-2xl border px-4 py-3 transition ${
-                    LIVE_URL
-                      ? 'border-sky-400/60 bg-sky-400/10 text-sky-200 hover:bg-sky-400/20'
-                      : 'border-slate-700/60 bg-slate-900/50 text-slate-400 pointer-events-none'
-                  }`}
-                  aria-disabled={!LIVE_URL}
-                >
-                  <span>Live hosted link</span>
-                  <span>{LIVE_URL ? 'Open' : 'Add link'}</span>
-                </a>
-                <a
-                  href={REPO_URL || '#'}
-                  className={`flex items-center justify-between rounded-2xl border px-4 py-3 transition ${
-                    REPO_URL
-                      ? 'border-emerald-400/60 bg-emerald-400/10 text-emerald-200 hover:bg-emerald-400/20'
-                      : 'border-slate-700/60 bg-slate-900/50 text-slate-400 pointer-events-none'
-                  }`}
-                  aria-disabled={!REPO_URL}
-                >
-                  <span>Public GitHub repository link</span>
-                  <span>{REPO_URL ? 'Open' : 'Add link'}</span>
-                </a>
-                <a
-                  href={SUBMIT_URL || '#'}
-                  className={`flex items-center justify-between rounded-2xl border px-4 py-3 transition ${
-                    SUBMIT_URL
-                      ? 'border-amber-400/60 bg-amber-400/10 text-amber-200 hover:bg-amber-400/20'
-                      : 'border-slate-700/60 bg-slate-900/50 text-slate-400 pointer-events-none'
-                  }`}
-                  aria-disabled={!SUBMIT_URL}
-                >
-                  <span>Submit</span>
-                  <span>{SUBMIT_URL ? 'Open' : 'Add link'}</span>
-                </a>
-              </div>
-            </section>
           </aside>
         </main>
       </div>
